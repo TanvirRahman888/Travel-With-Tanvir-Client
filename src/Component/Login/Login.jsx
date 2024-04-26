@@ -1,13 +1,17 @@
 
 import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 const Login = () => {
 
     const { logIn, logInWithGoogle, logInWithGithub } = useContext(AuthContext);
 
     const [showPassword, setShowPassword] = useState(false);
+
+    const location =useLocation();
+    const navigate =useNavigate();
+    console.log("Log in Page : ",location);
 
     const handelLogInForm = (e) => {
         e.preventDefault();
@@ -20,6 +24,7 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user, "Log in Page");
                 alert("Log in Successful");
+                navigate(location?.state ? location.state : "/" )
 
             })
             .catch((error) => {
