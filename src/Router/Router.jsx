@@ -2,6 +2,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import Root from '../Component/Root/Root';
 import Login from '../Component/Login/Login';
 import Register from '../Component/Login/Register/Register';
+import AddTouristSpot from '../Component/AddTouristSpot/AddTouristSpot';
+import PrivateRoute from '../Component/PrivateRoute/PrivateRoute';
 
 const Router = createBrowserRouter([
     {
@@ -11,6 +13,18 @@ const Router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            },
+            {
+                path: '/addTouristSpot',
+                element: <PrivateRoute><AddTouristSpot></AddTouristSpot></PrivateRoute>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             },
             {
                 path: '/register',

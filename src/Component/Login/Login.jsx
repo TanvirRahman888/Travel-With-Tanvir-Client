@@ -24,6 +24,7 @@ const Login = () => {
             })
             .catch((error) => {
                 console.log(error, "Log in Page");
+                alert("Log in Decline");
             });
 
     }
@@ -31,12 +32,14 @@ const Login = () => {
         logInWithGoogle()
             .then(result => {
                 console.log(result.user);
+                alert("Log in with Google");
             })
     }
     const handelGithubLogIn = () => {
         logInWithGithub()
             .then(result => {
                 console.log(result.user);
+                alert("Log in with Github");
             })
     }
     return (

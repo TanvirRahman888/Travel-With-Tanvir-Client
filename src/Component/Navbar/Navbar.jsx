@@ -12,8 +12,11 @@ const Navbar = () => {
     const navLinks = <>
         <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={'/'}>Home</Link></li>
         <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>All Tourists Spot</Link></li>
-        <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>Add Tourists Spot</Link></li>
-        <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>My List</Link></li>
+        <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={'addTouristSpot'}>Add Tourists Spot</Link></li>
+        {
+            user ? <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>My List</Link></li>:<></>
+        }
+
         <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>About Us</Link></li>
         <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>Contact Us</Link></li>
     </>
