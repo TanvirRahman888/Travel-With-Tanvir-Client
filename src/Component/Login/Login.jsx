@@ -24,7 +24,7 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user, "Log in Page");
                 alert("Log in Successful");
-                navigate(location?.state ? location.state : "/" )
+                navigate(location?.state ? location.state : "/" );
 
             })
             .catch((error) => {
@@ -38,6 +38,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 alert("Log in with Google");
+                navigate(location?.state ? location.state : "/" );
             })
     }
     const handelGithubLogIn = () => {
@@ -45,6 +46,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 alert("Log in with Github");
+                navigate(location?.state ? location.state : "/" );
             })
     }
     return (

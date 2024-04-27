@@ -4,6 +4,7 @@ import Login from '../Component/Login/Login';
 import Register from '../Component/Login/Register/Register';
 import AddTouristSpot from '../Component/AddTouristSpot/AddTouristSpot';
 import PrivateRoute from '../Component/PrivateRoute/PrivateRoute';
+import UpdateProfile from '../Component/UpdateProfile/UpdateProfile';
 
 const Router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const Router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/updateprofile',
+                element: <UpdateProfile></UpdateProfile>
             },
         ]
     },

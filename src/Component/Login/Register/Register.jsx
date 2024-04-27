@@ -1,14 +1,17 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
     const [showPassword, setShowPassword] = useState(false);
+
+    const location =useLocation();
+    const navigate =useNavigate();
 
     const handelRegisterForm = (e) => {
         e.preventDefault();
@@ -22,6 +25,9 @@ const Register = () => {
         //CreateUser
         createUser(email,password)
         .then((result) => {
+            updateUserProfile(name,photoURL )
+            console.log(result.user);
+            navigate(location?.state ? location.state : '/')
             console.log(result);
           })
           .catch((error) => {
