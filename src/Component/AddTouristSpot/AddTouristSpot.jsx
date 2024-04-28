@@ -61,6 +61,8 @@ const AddTouristSpot = () => {
                         if (data.insertedId) {
                             Swal.fire("Spot Added!", "", "success");
                             form.reset();
+                        }else{
+                            Swal.fire("Spot isn't Added", "", "info");
                         }
 
                     })

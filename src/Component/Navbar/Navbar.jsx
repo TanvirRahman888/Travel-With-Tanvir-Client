@@ -11,10 +11,10 @@ const Navbar = () => {
     }
     const navLinks = <>
         <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={'/'}>Home</Link></li>
-        <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>All Tourists Spot</Link></li>
+        <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={'/TouristSpot'}>All Tourists Spot</Link></li>
         <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={'addTouristSpot'}>Add Tourists Spot</Link></li>
         {
-            user ? <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>My List</Link></li>:<></>
+            user ? <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>My List</Link></li> : <></>
         }
 
         <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>About Us</Link></li>
@@ -40,32 +40,26 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {/* {user ?
-                        <a onClick={handelLogOut} className="btn text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3">Log Out</a>
-
-                        :
-                        <a className="btn text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={'/login'}>Log In</Link></a>
-                    } */}
-
-{
-                    user ?
-                        <div className="flex items-center ">
-                            <div className="dropdown dropdown-hover">
-                                <div tabIndex={0} role="button" className=" m-1">
-                                    <div className="h-12 w-12 m-2 rounded-lg p-1 border-2 border-green-500"> <img src={user.photoURL} alt="" />
+                    
+                    {
+                        user ?
+                            <div className="flex items-center ">
+                                <div className="dropdown dropdown-hover">
+                                    <div tabIndex={0} role="button" className=" m-1">
+                                        <div className="h-12 w-12 m-2 rounded-lg p-1 border-2 border-green-500"> <img src={user.photoURL} alt="" />
+                                        </div>
                                     </div>
+                                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40">
+                                        <li><a>{user.displayName}</a></li>
+                                        <li><Link to={'/UpdateProfile'}>Update Profile</Link></li>
+                                        <li><Link onClick={handelLogOut}> <a className="">Log Out</a> </Link></li>
+                                    </ul>
                                 </div>
-                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40">
-                                    <li><a>{user.displayName}</a></li>
-                                    <li><Link to={'/UpdateProfile'}>Update Profile</Link></li>
-                                    <li><Link onClick={handelLogOut}> <a className="">Log Out</a> </Link></li>
-                                </ul>
+
                             </div>
-                            
-                        </div>
-                        :
-                        <Link to={'/login'}> <a className="btn font-bold text-xl animate__animated animate__swing bg-blue-300 hover:bg-blue-400">Get Access</a> </Link>
-                }
+                            :
+                            <Link to={'/login'}> <a className="btn font-bold text-xl animate__animated animate__swing bg-blue-300 hover:bg-blue-400">Get Access</a> </Link>
+                    }
                 </div>
             </div>
 

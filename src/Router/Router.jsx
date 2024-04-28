@@ -6,6 +6,7 @@ import AddTouristSpot from '../Component/AddTouristSpot/AddTouristSpot';
 import PrivateRoute from '../Component/PrivateRoute/PrivateRoute';
 import UpdateProfile from '../Component/UpdateProfile/UpdateProfile';
 import Home from '../Component/Home/Home';
+import TouristSpot from '../Component/TouristSpot/TouristSpot';
 
 const Router = createBrowserRouter([
     {
@@ -29,10 +30,15 @@ const Router = createBrowserRouter([
                 element: <PrivateRoute><AddTouristSpot></AddTouristSpot></PrivateRoute>
             },
             {
-                path: '/register',
-                element: <Register></Register>
+                path: '/TouristSpot',
+                element: <TouristSpot></TouristSpot>,
+                loader:()=>fetch('http://localhost:5000/TouristSpot')
             },
             {
+                path: '/updateprofile',
+                element: <UpdateProfile></UpdateProfile>
+            },
+                        {
                 path: '/register',
                 element: <Register></Register>
             },
@@ -40,6 +46,7 @@ const Router = createBrowserRouter([
                 path: '/updateprofile',
                 element: <UpdateProfile></UpdateProfile>
             },
+            
         ]
     },
 ]);
