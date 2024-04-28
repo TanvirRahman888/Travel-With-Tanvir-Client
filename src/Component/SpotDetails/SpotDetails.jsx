@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 const SpotDetails = () => {
     const loadedSpot = useLoaderData()
-    const { spotName, countryName, location, cost, image, seasonality, description, duration, yearlyVisitors, authorName, authorEmail } = loadedSpot
+    const { spotName, countryName, location, cost, image, seasonality, description, duration, yearlyVisitors, authorName} = loadedSpot
     return (
         <div>
             <div className="p-5 bg-slate-300 min-h-52 flex flex-col">

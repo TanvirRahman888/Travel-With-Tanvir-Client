@@ -8,6 +8,7 @@ import UpdateProfile from '../Component/UpdateProfile/UpdateProfile';
 import Home from '../Component/Home/Home';
 import TouristSpot from '../Component/TouristSpot/TouristSpot';
 import SpotDetails from '../Component/SpotDetails/SpotDetails';
+import MyList from '../Component/MyList/MyList';
 
 const Router = createBrowserRouter([
     {
@@ -39,6 +40,11 @@ const Router = createBrowserRouter([
                 path: '/TouristSpot/:id',
                 element:<PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/TouristSpot/${params.id}`)
+            },
+            {
+                path: '/MyList/:email',
+                element:<PrivateRoute><MyList></MyList></PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5000/MyList/${params.email}`)
             },
             {
                 path: '/updateprofile',
