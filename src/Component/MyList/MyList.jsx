@@ -1,10 +1,12 @@
 
 import { useLoaderData } from "react-router-dom";
 import MySpot from "./MySpot";
+import { useState } from "react";
 
 
 const MyList = () => {
-    const myList = useLoaderData()
+    const loadedList = useLoaderData();
+    const [myList, setMyList]=useState(loadedList);
 
 
 
@@ -32,8 +34,13 @@ const MyList = () => {
                         </thead>
 
                         {
-                            myList.map((spot, idx) => <MySpot key={idx} spot={spot} idx={idx}></MySpot>
-                            )
+                            myList.map((spot, idx) => <MySpot 
+                            key={idx} 
+                            spot={spot}
+                            idx={idx}
+                            myList={myList} 
+                            setMyList={setMyList}
+                            ></MySpot>)
                         }
                         
                     </table>

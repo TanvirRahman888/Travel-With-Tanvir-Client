@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 
-const MySpot = ({ spot, idx }) => {
+const MySpot = ({ spot,myList, setMyList, idx }) => {
     const handelDelete = () => {
         Swal.fire({
             title: "Are you sure?",
@@ -14,23 +14,21 @@ const MySpot = ({ spot, idx }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                //   Swal.fire({
-                //     title: "Deleted!",
-                //     text: "Your file has been deleted.",
-                //     icon: "success"
-                //   });
-                fetch(`http://localhost:5000/TouristSpot/${_id}`,{
-                    method:'DELETE'
+               
+                fetch(`http://localhost:5000/TouristSpot/${_id}`, {
+                    method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data);
                         if (data.deletedCount > 0) {
-                              Swal.fire({
+                            Swal.fire({
                                 title: "Deleted!",
                                 text: "Your spot has been deleted.",
                                 icon: "success"
-                              });
+                            });
+                            const remaining = myList.filter(mL => mL._id != _id);
+                            setMyList(remaining);
                         }
                     })
             }
@@ -55,7 +53,7 @@ const MySpot = ({ spot, idx }) => {
                 <td className="px-3 py-2 flex gap-2">
                     <Link to={`/TouristSpot/${_id}`}><button className="btn btn-success">View</button></Link>
                     <Link to={`/updateSpot/${_id}`}><button className="btn btn-info">Edit</button></Link>
-                    
+
                     <button onClick={() => handelDelete(_id)} className="btn btn-error">Delete</button>
                 </td>
             </tr>
