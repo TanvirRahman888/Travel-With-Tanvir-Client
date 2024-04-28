@@ -1,43 +1,78 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from 'sweetalert2'
+
+
 
 const AddTouristSpot = () => {
-    const{user}=useContext(AuthContext)
-
-    const handelAddSpot=e=>{
+    const { user, setLoading, } = useContext(AuthContext)
+    const handelAddSpot = e => {
+        setLoading(false)
         e.preventDefault();
-        const form=e.target;
-        const spotName=form.SpotName.value; 
-        const countryName=form.CountryName.value; 
-        const location=form.Location.value; 
-        const cost=form.AverageCost.value; 
-        const image=form.Image.value; 
-        const seasonality=form.Seasonality.value; 
-        const description=form.Description.value; 
-        const duration=form.Duration.value;
-        const yearlyVisitors=form.YearlyVisitors.value;
-        const authorName=user.displayName; 
-        const authorEmail=user.email; 
+        const form = e.target;
+        const spotName = form.SpotName.value;
+        const countryName = form.CountryName.value;
+        const location = form.Location.value;
+        const cost = form.AverageCost.value;
+        const image = form.Image.value;
+        const seasonality = form.Seasonality.value;
+        const description = form.Description.value;
+        const duration = form.Duration.value;
+        const yearlyVisitors = form.YearlyVisitors.value;
+        const authorName = user.displayName;
+        const authorEmail = user.email;
         console.log(spotName, countryName, location, cost, image, seasonality, description, duration, yearlyVisitors, authorName, authorEmail);
 
-        const newSpot={spotName, countryName, location, cost, image, seasonality, description, duration, yearlyVisitors, authorName, authorEmail}
+        const newSpot = { spotName, countryName, location, cost, image, seasonality, description, duration, yearlyVisitors, authorName, authorEmail }
         console.log(newSpot, "Object");
 
-        fetch('http://localhost:5000/TouristSpot',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(newSpot)
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-        })
+        // fetch('http://localhost:5000/TouristSpot', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(newSpot)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //     })
+
+        // ------------------------------
+        Swal.fire({
+            title: "Do you add this spot?",
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Add",
+            denyButtonText: `Don't add`
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                fetch('http://localhost:5000/TouristSpot', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newSpot)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.insertedId) {
+                            Swal.fire("Spot Added!", "", "success");
+                            form.reset();
+                        }
+
+                    })
+
+            } else if (result.isDenied) {
+                Swal.fire("Changes are not saved", "", "info");
+            }
+        });
     }
     return (
         <div className="bg-blue-100 p-5 rounded-xl my-5">
-            <h1 className="text-center text-2xl font-bold">Add A Tourist Spot</h1>
+            <h1 className="text-center text-2xl font-bold">Add a Tourist Spot</h1>
             <section className="p-6">
                 <form onSubmit={handelAddSpot} className="grid grid-cols-2 gap-4">
                     <div >
@@ -87,13 +122,13 @@ const AddTouristSpot = () => {
                     <div >
                         <label className="block text-lg text-black font-medium">Duration</label>
                         <div className="flex">
-                            <input type="number" name="Duration" required placeholder="4, 5, 6... days" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />                         
+                            <input type="number" name="Duration" required placeholder="4, 5, 6... days" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
                         </div>
                     </div>
                     <div >
                         <label className="block text-lg text-black font-medium">Yearly Visitors</label>
                         <div className="flex">
-                            <input type="number" name="YearlyVisitors" required placeholder="4, 5, 6... visitors" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />                       
+                            <input type="number" name="YearlyVisitors" required placeholder="4, 5, 6... visitors" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
                         </div>
                     </div>
                     <button className="text-xl btn col-span-2 btn-success">Add Spot</button>
