@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 
 
 const MySpot = ({ spot, idx }) => {
-    const handelDelete = (id) => {
+    const handelDelete = () => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -53,10 +53,9 @@ const MySpot = ({ spot, idx }) => {
                     <p>{yearlyVisitors}</p>
                 </td>
                 <td className="px-3 py-2 flex gap-2">
-                    <Link to={`/TouristSpot/${_id}`}>
-                        <button className="btn btn-success">View</button>
-                    </Link>
-                    <button className="btn btn-info">Edit</button>
+                    <Link to={`/TouristSpot/${_id}`}><button className="btn btn-success">View</button></Link>
+                    <Link to={`/updateSpot/${_id}`}><button className="btn btn-info">Edit</button></Link>
+                    
                     <button onClick={() => handelDelete(_id)} className="btn btn-error">Delete</button>
                 </td>
             </tr>

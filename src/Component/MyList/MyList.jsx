@@ -5,6 +5,9 @@ import MySpot from "./MySpot";
 
 const MyList = () => {
     const myList = useLoaderData()
+
+
+
     return (
         <div>
             <p className="text-center text-2xl">MyList : {myList.length}</p>

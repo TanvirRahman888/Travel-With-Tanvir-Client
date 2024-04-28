@@ -9,6 +9,7 @@ import Home from '../Component/Home/Home';
 import TouristSpot from '../Component/TouristSpot/TouristSpot';
 import SpotDetails from '../Component/SpotDetails/SpotDetails';
 import MyList from '../Component/MyList/MyList';
+import UpdateTouristSpot from '../Component/UpdateTouristSpot/UpdateTouristSpot';
 
 const Router = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element:<Home></Home>
+                element: <Home></Home>
             },
             {
                 path: '/login',
@@ -28,18 +29,22 @@ const Router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
+                path: '/updateprofile',
+                element: <UpdateProfile></UpdateProfile>
+            },
+            {
                 path: '/addTouristSpot',
                 element: <PrivateRoute><AddTouristSpot></AddTouristSpot></PrivateRoute>
             },
             {
                 path: '/TouristSpot',
                 element: <TouristSpot></TouristSpot>,
-                loader:()=>fetch('http://localhost:5000/TouristSpot')
+                loader: () => fetch('http://localhost:5000/TouristSpot')
             },
             {
                 path: '/TouristSpot/:id',
-                element:<PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/TouristSpot/${params.id}`)
+                element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/TouristSpot/${params.id}`)
             },
             {
                 path: '/MyList/:email',
@@ -47,18 +52,13 @@ const Router = createBrowserRouter([
                 loader:({params})=>fetch(`http://localhost:5000/MyList/${params.email}`)
             },
             {
-                path: '/updateprofile',
-                element: <UpdateProfile></UpdateProfile>
-            },
-                        {
-                path: '/register',
-                element: <Register></Register>
-            },
-            {
-                path: '/updateprofile',
-                element: <UpdateProfile></UpdateProfile>
-            },
+                path:'/updateSpot/:id',
+                element:<PrivateRoute><UpdateTouristSpot></UpdateTouristSpot></PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5000/TouristSpot/${params.id}`)
+            }
             
+            
+
         ]
     },
 ]);
