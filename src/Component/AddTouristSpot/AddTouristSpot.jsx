@@ -26,20 +26,7 @@ const AddTouristSpot = () => {
         const newSpot = { spotName, countryName, location, cost, image, seasonality, description, duration, yearlyVisitors, authorName, authorEmail }
         console.log(newSpot, "Object");
 
-        // fetch('http://localhost:5000/TouristSpot', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newSpot)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
-
-        // ------------------------------
-        Swal.fire({
+                Swal.fire({
             title: "Do you add this spot?",
             showDenyButton: true,
             showCancelButton: true,
