@@ -5,6 +5,7 @@ import TopAttractions from "../TopAttractions/TopAttractions";
 
 
 const Home = () => {
+    
     return (
         <div>
             <Carousel></Carousel>

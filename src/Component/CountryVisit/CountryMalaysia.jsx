@@ -2,13 +2,13 @@ import { Link, useLoaderData } from "react-router-dom";
 
 
 
-const Country = () => {
+const CountryMalaysia = () => {
     const countrySpots = useLoaderData();
     console.log(countrySpots);
     
     return (
         <div>
-            <h1 className="text-xl">Bangladesh</h1>
+            <h1 className="text-xl">Malaysia</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
                     countrySpots.map(spot => <div key={spot._id} className="flex flex-col gap-2 p-5 bg-slate-300 min-h-52">
@@ -34,4 +34,4 @@ const Country = () => {
     );
 };
 
-export default Country;
+export default CountryMalaysia;

@@ -16,8 +16,7 @@ const Spot = ({ spot }) => {
                 <h3 className=""><span className="font-semibold">Time: </span>{duration} days</h3>
             </div>
             <h3 className=""><span className="font-semibold">Yearly Visitors:</span> {yearlyVisitors}</h3>
-            {/* <h3 className="">{description.slice(0, 150)}</h3> */}
-            <Link to={`/TouristSpot/${_id}`}>
+                        <Link to={`/TouristSpot/${_id}`}>
             <button className="btn btn-info"> View Details</button>
             </Link>
         </div>

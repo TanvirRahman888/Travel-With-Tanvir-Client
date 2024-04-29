@@ -11,6 +11,10 @@ import SpotDetails from '../Component/SpotDetails/SpotDetails';
 import MyList from '../Component/MyList/MyList';
 import UpdateTouristSpot from '../Component/UpdateTouristSpot/UpdateTouristSpot';
 import Country from '../Component/CountryVisit/Country';
+import CountryThailand from '../Component/CountryVisit/CountryThailand';
+import CountryMalaysia from '../Component/CountryVisit/CountryMalaysia';
+import CountryVietnam from '../Component/CountryVisit/CountryVietnam';
+import CountryCambodia from '../Component/CountryVisit/CountryCambodia';
 
 const Router = createBrowserRouter([
     {
@@ -53,9 +57,34 @@ const Router = createBrowserRouter([
                 loader:({params})=>fetch(`http://localhost:5000/MyList/${params.email}`)
             },
             {
-                path: '/TouristSpot/:country',
+                path: '/TouristSpot/Bangladesh',
                 element:<Country></Country>,
-                loader:({params})=>fetch(`http://localhost:5000/allSpot/${params.country}`)
+                loader:()=>fetch(`http://localhost:5000/allSpot/Bangladesh`)
+            },
+            {
+                path: '/TouristSpot/Thailand',
+                element:<CountryThailand></CountryThailand>,
+                loader:()=>fetch(`http://localhost:5000/allSpot/Thailand`)
+            },
+            {
+                path: '/TouristSpot/Indonesia',
+                element:<CountryThailand></CountryThailand>,
+                loader:()=>fetch(`http://localhost:5000/allSpot/Indonesia`)
+            },
+            {
+                path: '/TouristSpot/Malaysia',
+                element:<CountryMalaysia></CountryMalaysia>,
+                loader:()=>fetch(`http://localhost:5000/allSpot/Malaysia`)
+            },
+            {
+                path: '/TouristSpot/Vietnam',
+                element:<CountryVietnam></CountryVietnam>,
+                loader:()=>fetch(`http://localhost:5000/allSpot/Vietnam`)
+            },
+            {
+                path: '/TouristSpot/Cambodia',
+                element:<CountryCambodia></CountryCambodia>,
+                loader:()=>fetch(`http://localhost:5000/allSpot/Cambodia`)
             },
             {
                 path:'/updateSpot/:id',
