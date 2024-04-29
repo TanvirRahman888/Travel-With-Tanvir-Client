@@ -15,6 +15,7 @@ import CountryThailand from '../Component/CountryVisit/CountryThailand';
 import CountryMalaysia from '../Component/CountryVisit/CountryMalaysia';
 import CountryVietnam from '../Component/CountryVisit/CountryVietnam';
 import CountryCambodia from '../Component/CountryVisit/CountryCambodia';
+import CountryIndonesia from '../Component/CountryVisit/CountryIndonesia';
 
 const Router = createBrowserRouter([
     {
@@ -68,7 +69,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/TouristSpot/Indonesia',
-                element:<CountryThailand></CountryThailand>,
+                element:<CountryIndonesia></CountryIndonesia>,
                 loader:()=>fetch(`http://localhost:5000/allSpot/Indonesia`)
             },
             {

@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 
 const AddTouristSpot = () => {
     const { user, setLoading, } = useContext(AuthContext)
+    
     const handelAddSpot = e => {
         setLoading(false)
         e.preventDefault();
@@ -85,7 +86,7 @@ const AddTouristSpot = () => {
                     <div >
                         <label className="block text-lg text-black font-medium">Average Cost</label>
                         <div className="flex">
-                            <input type="text" name="AverageCost" required placeholder="Average Cost" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
+                            <input type="number" name="AverageCost" required placeholder="Average Cost" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
                         </div>
                     </div>
                     <div >
@@ -117,7 +118,19 @@ const AddTouristSpot = () => {
                     <div >
                         <label className="block text-lg text-black font-medium">Yearly Visitors</label>
                         <div className="flex">
-                            <input type="number" name="YearlyVisitors" required placeholder="4, 5, 6... visitors" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
+                            <input type="number" name="YearlyVisitors" required placeholder="100,000 visitors" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
+                        </div>
+                    </div>
+                    <div >
+                        <label className="block text-lg text-black font-medium">Author Name</label>
+                        <div className="flex">
+                            <input type="text" disabled defaultValue={user.displayName} required placeholder="Author Name" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
+                        </div>
+                    </div>
+                    <div >
+                        <label className="block text-lg text-black font-medium">Author Email</label>
+                        <div className="flex">
+                            <input type="text" disabled defaultValue={user.email} required placeholder="Author Email" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
                         </div>
                     </div>
                     <button className="text-xl btn col-span-2 btn-success">Add Spot</button>

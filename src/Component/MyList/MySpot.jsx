@@ -35,7 +35,7 @@ const MySpot = ({ spot,myList, setMyList, idx }) => {
         });
     }
 
-    const { _id, spotName, countryName, yearlyVisitors } = spot;
+    const { _id, spotName, cost, countryName, yearlyVisitors } = spot;
     return (
         <tbody className="border-b bg-gray-200 text-lg text-black border-gray-700">
 
@@ -43,6 +43,9 @@ const MySpot = ({ spot,myList, setMyList, idx }) => {
                 <td className="px-3 ">{idx + 1}</td>
                 <td className="px-3 py-2">
                     <p>{spotName}</p>
+                </td>
+                <td className="px-3 py-2">
+                    <p>{cost}</p>
                 </td>
                 <td className="px-3 py-2">
                     <p className="">{countryName}</p>
