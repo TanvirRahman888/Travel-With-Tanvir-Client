@@ -16,11 +16,13 @@ import CountryMalaysia from '../Component/CountryVisit/CountryMalaysia';
 import CountryVietnam from '../Component/CountryVisit/CountryVietnam';
 import CountryCambodia from '../Component/CountryVisit/CountryCambodia';
 import CountryIndonesia from '../Component/CountryVisit/CountryIndonesia';
+import ErrorPage from '../Component/ErrorPage/ErrorPage';
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',

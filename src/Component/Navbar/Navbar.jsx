@@ -1,13 +1,31 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from 'sweetalert2'
+
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const handelLogOut = () => {
         logOut()
-            .then(() => alert("Welcome Back"))
-            .catch(() => alert("You are Here"))
+            .then(() => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Log Out",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            })
+            .catch(() => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "You are Here",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            })
     }
     const navLinks = <>
         <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={'/'}>Home</Link></li>
@@ -17,7 +35,6 @@ const Navbar = () => {
             user ? <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={`/MyList/${user.email}`}>My List</Link></li> : <></>
         }
 
-        <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>About Us</Link></li>
         <li className="text-xl border-2 border-blue-300 hover:border-blue-800 rounded-xl mx-3"><Link to={''}>Contact Us</Link></li>
     </>
     return (
@@ -58,7 +75,7 @@ const Navbar = () => {
 
                             </div>
                             :
-                            <Link to={'/login'}> <a className="btn font-bold text-xl animate__animated animate__swing bg-blue-300 hover:bg-blue-400">Get Access</a> </Link>
+                            <Link to={'/login'}> <a className="btn btn-success font-bold text-xl animate__animated animate__swing ">Log in</a> </Link>
                     }
                 </div>
             </div>

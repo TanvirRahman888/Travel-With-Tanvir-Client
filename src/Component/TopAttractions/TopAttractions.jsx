@@ -21,7 +21,7 @@ const TopAttractions = () => {
         </div>
     }
     return (
-        <div>
+        <div className="bg-blue-100 rounded-2xl my-6 p-5">
             <h1 className="text-5xl text-center font-bold m-5">Popular Attractions</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-around gap-5">

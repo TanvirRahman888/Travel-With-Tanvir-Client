@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 
 const Register = () => {
@@ -10,8 +11,8 @@ const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
-    const location =useLocation();
-    const navigate =useNavigate();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handelRegisterForm = (e) => {
         e.preventDefault();
@@ -22,17 +23,43 @@ const Register = () => {
         const photoURL = e.target.photo.value;
         console.log(name, photoURL, email, password);
 
-        //CreateUser
-        createUser(email,password)
-        .then((result) => {
-            updateUserProfile(name,photoURL )
-            console.log(result.user);
-            navigate(location?.state ? location.state : '/')
-            console.log(result);
-          })
-          .catch((error) => {
-            console.error(error);
+        const isValidPassword = (password) => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/.test(password);
+
+        if (!isValidPassword(password)) {
+           return Swal.fire({
+            icon: "error",
+            title: "Use a strong password",
+            text: "Please use a strong password containing at least one uppercase letter, one lowercase letter, one digit, and must be at least 6 characters long.",
           });
+        }
+
+
+        //CreateUser
+        createUser(email, password)
+            .then((result) => {
+                updateUserProfile(name, photoURL)
+                console.log(result.user);
+                navigate(location?.state ? location.state : '/')
+                console.log(result);
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Registration Success",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            })
+            .catch((error) => {
+                console.error(error);
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Registration Decline",
+                    text: "Please use another email address.",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            });
 
 
     }

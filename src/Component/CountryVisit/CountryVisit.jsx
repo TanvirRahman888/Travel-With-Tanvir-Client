@@ -5,9 +5,9 @@ const CountryVisit = () => {
     
 
     return (
-        <div>
+        <div  className="bg-blue-100 rounded-2xl my-6 p-5 mt-20">
             <div>
-                <h1 className="text-5xl font-bold text-center">Explore your next country </h1>
+                <h1 className="text-5xl font-bold text-center mb-5">Explore your next country </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-around gap-5">
 
                     <Link to={`/TouristSpot/Bangladesh`}>

@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from 'sweetalert2'
 const Login = () => {
 
     const { logIn, logInWithGoogle, logInWithGithub } = useContext(AuthContext);
@@ -23,13 +24,27 @@ const Login = () => {
         logIn(email, password)
             .then((result) => {
                 console.log(result.user, "Log in Page");
-                alert("Log in Successful");
+                // alert("Log in Successful");
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Log in Successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 navigate(location?.state ? location.state : "/" );
 
             })
             .catch((error) => {
                 console.log(error, "Log in Page");
-                alert("Log in Decline");
+               
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "Log in Decline",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
             });
 
     }
@@ -37,7 +52,14 @@ const Login = () => {
         logInWithGoogle()
             .then(result => {
                 console.log(result.user);
-                alert("Log in with Google");
+                // alert("Log in with Google");
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Log in with Google",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 navigate(location?.state ? location.state : "/" );
             })
     }
@@ -45,7 +67,14 @@ const Login = () => {
         logInWithGithub()
             .then(result => {
                 console.log(result.user);
-                alert("Log in with Github");
+                // alert("Log in with Github");
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Log in with Github",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 navigate(location?.state ? location.state : "/" );
             })
     }
