@@ -61,12 +61,12 @@ const Navbar = () => {
                     {
                         user ?
                             <div className="flex items-center ">
-                                <div className="dropdown dropdown-hover">
+                                <div className="dropdown dropdown-end dropdown-hover">
                                     <div tabIndex={0} role="button" className=" m-1">
                                         <div className="h-12 w-12 m-2 rounded-lg p-1 border-2 border-green-500"> <img src={user.photoURL} alt="" />
                                         </div>
                                     </div>
-                                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40">
+                                    <ul tabIndex={0} className="dropdown-content dropdown-end z-[1] menu p-2 shadow bg-base-100 rounded-box w-40">
                                         <li><a>{user.displayName}</a></li>
                                         <li><Link to={'/UpdateProfile'}>Update Profile</Link></li>
                                         <li><Link onClick={handelLogOut}> <a className="">Log Out</a> </Link></li>

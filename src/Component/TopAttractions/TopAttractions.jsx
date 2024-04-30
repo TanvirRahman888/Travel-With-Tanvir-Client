@@ -34,9 +34,10 @@ const TopAttractions = () => {
     
     return (
         <div className="bg-blue-100 rounded-2xl my-6 p-5">
-            <h1 className="text-5xl text-center font-bold m-5 h-12">Popular Spot for <span>{text}</span><Cursor cursorColor='blue' /></h1>
+            <h1 className="text-5xl text-center font-bold mt-5 mb-20 h-12">Popular Spot for <span>{text}</span><Cursor cursorColor='black' /></h1>
+            
                 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-around gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 justify-around gap-5">
                 {
                     attractions.slice(0, 6).map(attraction =>
                         <Link to={`/TouristSpot/${attraction._id}`} key={attraction._id}> <Zoom> 

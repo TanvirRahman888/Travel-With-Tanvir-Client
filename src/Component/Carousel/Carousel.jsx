@@ -1,81 +1,47 @@
 import { Link } from "react-router-dom";
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import 'animate.css';
 
 const Carousel = () => {
     return (
 
-        <div>
-            <Swiper
-
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={50}
-                slidesPerView={1}
-                navigation
-                pagination={{ clickable: true }} 
-                // scrollbar={{ draggable: false }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
-            >
-                <SwiperSlide>
-                    <div className="hero bg-cover h-auto" style={{ backgroundImage: 'url(https://d2dqksvx8j00ig.cloudfront.net/JFront/Default/lifestyle/media/jeunesse-travel-video-thumbnail.jpg)' }}>
-                        <div className="hero-overlay bg-opacity-40"></div>
-                        <div className="flex flex-col hero-content text-center text-neutral-content">
-                            <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold flex-grow">Welcome to <br /> Travel with Tanvir</h1>
-                                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                                <button className="btn btn-primary"><Link to={'/TouristSpot'}>All Spot</Link></button>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <div className="hero" style={{ backgroundImage: 'url(https://tntribune.com/wp-content/uploads/2021/08/feat_30d48d6e-7b84-4dfe-bf22-6306f8a2d403.jpg)' }}>
-                        <div className="hero-overlay bg-opacity-40"></div>
-                        <div className="flex flex-col hero-content text-center text-neutral-content">
-                            <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold flex-grow">Welcome to Bangladesh</h1>
-                                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                                <button className="btn btn-primary"><Link to={'/TouristSpot/Bangladesh'}>Explore Bangladesh</Link></button>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="hero" style={{ backgroundImage: 'url(https://auspost.com.au/content/dam/corp/travel-essentials/photo-boats-on-water-in-thailand.jpg.auspostimage.970*0.169.medium.jpg)' }}>
-                        <div className="hero-overlay bg-opacity-40"></div>
-                        <div className="flex flex-col hero-content text-center text-neutral-content">
-                            <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold flex-grow">Welcome to Thailand</h1>
-                                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                                <button className="btn btn-primary"><Link to={'/TouristSpot/Thailand'}>Explore Thailand</Link></button>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="hero" style={{ backgroundImage: 'url(https://auspost.com.au/content/dam/corp/travel-essentials/photo-boats-on-water-in-thailand.jpg.auspostimage.970*0.169.medium.jpg)' }}>
-                        <div className="hero-overlay bg-opacity-40"></div>
-                        <div className="flex flex-col hero-content text-center text-neutral-content">
-                            <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold flex-grow">Welcome to Indonesia</h1>
-                                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                                <button className="btn btn-primary"><Link to={'/TouristSpot/Indonesia'}>Explore Indonesia</Link></button>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-
-
-            </Swiper>
+        <div className="relative">
+        <div className="carousel w-full max-h-[500px]">
+            <div id="slide1" className="carousel-item relative w-full">
+                <img src="https://www.traveltrendstoday.in/wp-content/uploads/2022/10/aee173df98a5b74ebe361beb2b054505.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" className="btn btn-circle">❮</a>
+                    <a href="#slide2" className="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide2" className="carousel-item relative w-full">
+                <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2018/04/cover26.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" className="btn btn-circle">❮</a>
+                    <a href="#slide3" className="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide3" className="carousel-item relative w-full">
+                <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2020/12/Post-Covid-Travel-Guide-To-Thailand-Cover-Thailand.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" className="btn btn-circle">❮</a>
+                    <a href="#slide4" className="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide4" className="carousel-item relative w-full">
+                <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" className="btn btn-circle">❮</a>
+                    <a href="#slide1" className="btn btn-circle">❯</a>
+                </div>
+            </div>
         </div>
+        <div className="absolute bottom-5 left-2 md:bottom-5 md:left-32 bg-gray-50 p-2 md:p-10 bg-opacity-50 rounded-2xl animate__animated animate__pulse">
+            <h2 className="text-xl md:text-3xl text-gr font-black">Find Your Next Spot </h2>
+            <button className="btn btn-success animate__animated animate__swing mt-5"><Link to={'/TouristSpot'}>All Spot</Link></button>
+        </div>
+
+    </div>
     );
 };
 
