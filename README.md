@@ -1,8 +1,39 @@
 # Travel with Tanvir
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to Travel with Tanvir! This web application allows you to explore a Tourist spots in Asia.
 
-Currently, two official plugins are available:
+## Website URL
+[Travel with Tanvir]( https://travel-with-tanvir.web.app/)
+https://travel-with-tanvir.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Client Site Repository
+[Client Site Repository]( https://github.com/programming-hero-web-course-4/B9A10-client-side-TanvirRahman888/)
+https://github.com/programming-hero-web-course-4/B9A10-client-side-TanvirRahman888
+
+
+## Server Site Repository
+[Server Site Repository]( https://github.com/programming-hero-web-course-4/b9a10-server-side-TanvirRahman888/)
+https://github.com/programming-hero-web-course-4/b9a10-server-side-TanvirRahman888
+
+## Features and Characteristics
+
+- **Country Visit**: Browse different Tourist spots by Country.
+- **Register and Login**:Register and Login using Email and Password, Google, and Github.
+- **Update User Profile**:Update user Name, and Photo.
+- **CRUD**:Registered user can Add, Edit and delete Own spots.
+- **Spot Details**: Only Registered user can see Spot Details.
+
+  
+## npm Packages Used
+
+- **Vite with React Template**: Set up the project with Vite and React.
+- **React Router DOM**: Implement client-side routing for seamless navigation.
+- **tailwindcss and daisyui**: Utilize Tailwind CSS and DaisyUI for modern styling.
+- **react-firebase**: Integrate Firebase services for user authentication and database functionalities.
+- **Mongodb**: used for a Online Database.
+- **React-simple-typewriter**: Used for Text Animation.
+c. **React Awesome reveal**: Used for Website animation.
+- **react-multi-carousel**: used for a slider.
+- **SWAL**: used for a Sweet Alert.
+
+
