@@ -11,11 +11,11 @@ const CountryIndonesia = () => {
     console.log(countrySpots);
     
     return (
-        <div>
-            <h1 className="text-xl text-center">Indonesia</h1>
+        <div className="bg-blue-100 p-5 my-7 rounded-2xl">
+            <h1 className="text-2xl text-center p-7 font-bold">Welcome to Indonesia</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
-                    countrySpots.map(spot => <div key={spot._id} className="flex flex-col gap-2 p-5 bg-slate-300 min-h-52">
+                    countrySpots.map(spot => <div key={spot._id} className="flex flex-col gap-2 p-5 bg-blue-50 rounded-xl  min-h-52">
                         <h3 className="text-lg font-bold mb-3">
                             {spot.spotName}, {spot.location}, {spot.countryName}
                         </h3>

@@ -28,7 +28,7 @@ const CountryVisit = () => {
                         <div className="flex flex-col justify-center items-center rounded-xl p-3 bg-gray-100 bg-cover h-72" style={{
                             backgroundImage: `url('https://i.pinimg.com/736x/2a/5f/46/2a5f46fdd347e897780df42eda52b117.jpg')`
                         }}>
-                            <h3 className="text-4xl text-center font-extrabold text-white">Indonesia</h3>
+                            <h3 className="text-4xl text-center font-extrabold text-blue-500">Indonesia</h3>
                         </div>
                     </Link>
                     <Link to={`/TouristSpot/Malaysia`}>
