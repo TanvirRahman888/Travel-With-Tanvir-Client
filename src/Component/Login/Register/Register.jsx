@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
@@ -7,6 +7,9 @@ import Swal from 'sweetalert2'
 
 
 const Register = () => {
+    useEffect(()=>{
+        document.title="Travel with Tanvir | Register"
+    },[])
     const { createUser, updateUserProfile } = useContext(AuthContext)
 
     const [showPassword, setShowPassword] = useState(false);

@@ -1,10 +1,13 @@
 
 import { useLoaderData } from "react-router-dom";
 import MySpot from "./MySpot";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const MyList = () => {
+    useEffect(()=>{
+        document.title="Travel with Tanvir | My List"
+    },[])
     const loadedList = useLoaderData();
     const [myList, setMyList]=useState(loadedList);
 

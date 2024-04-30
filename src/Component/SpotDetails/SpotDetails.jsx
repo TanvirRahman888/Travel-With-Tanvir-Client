@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const SpotDetails = () => {
+
+    useEffect(()=>{
+        document.title="Travel with Tanvir | Details"
+    },[])
+
     const loadedSpot = useLoaderData()
     const { spotName, countryName, location, cost, image, seasonality, description, duration, yearlyVisitors, authorName } = loadedSpot
     return (

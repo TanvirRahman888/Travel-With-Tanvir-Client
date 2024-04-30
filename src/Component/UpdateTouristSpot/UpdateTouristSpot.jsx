@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../Provider/AuthProvider";
 
 const UpdateTouristSpot = () => {
+    useEffect(()=>{
+        document.title="Travel with Tanvir | Update Spot"
+    },[])
     const { user, setLoading, } = useContext(AuthContext)
     const spot=useLoaderData();
     const {_id,spotName, countryName, location, cost, image, seasonality, description, duration, yearlyVisitors, authorName, authorEmail}=spot;

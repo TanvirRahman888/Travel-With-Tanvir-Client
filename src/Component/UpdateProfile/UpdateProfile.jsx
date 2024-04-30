@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 
 
 const UpdateProfile = () => {
-
+    useEffect(()=>{
+        document.title="Travel with Tanvir | Update Profile"
+    },[])
     const {user, updateUserProfile, setLoading}=useContext(AuthContext)
     const handelUpdateProfile = (e) => {     
         e.preventDefault()

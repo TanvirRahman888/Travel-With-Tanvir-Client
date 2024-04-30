@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Spot from "../Spot/Spot";
 
 
 const TouristSpot = () => {
+    useEffect(()=>{
+        document.title="Travel with Tanvir | Tourist Spot"
+    },[])
 
     const { setLoading } = useContext(AuthContext);
     setLoading(false)

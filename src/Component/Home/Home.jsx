@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AboutUs from "../AboutUs/AboutUs";
 import Carousel from "../Carousel/Carousel";
 import ContactUs from "../ContactUs/ContactUs";
@@ -8,7 +9,9 @@ import TopAttractions from "../TopAttractions/TopAttractions";
 
 
 const Home = () => {
-
+    useEffect(()=>{
+        document.title="Travel with Tanvir"
+    },[])
     
     return (
         <div>

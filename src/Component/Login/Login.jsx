@@ -1,10 +1,13 @@
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 const Login = () => {
+    useEffect(()=>{
+        document.title="Travel with Tanvir | Log In"
+    },[])
 
     const { logIn, logInWithGoogle, logInWithGithub } = useContext(AuthContext);
 

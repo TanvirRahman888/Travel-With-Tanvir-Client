@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 
 
 const CountryVietnam = () => {
+    useEffect(()=>{
+        document.title="Travel with Tanvir | Visit Vietnam"
+    },[])
     const countrySpots = useLoaderData();
     console.log(countrySpots);
     

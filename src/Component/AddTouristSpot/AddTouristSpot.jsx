@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 
 
 
 const AddTouristSpot = () => {
+    useEffect(()=>{
+        document.title="Travel with Tanvir | Add Tourist Spot"
+    },[])
     const { user, setLoading, } = useContext(AuthContext)
     
     const handelAddSpot = e => {
