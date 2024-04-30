@@ -39,7 +39,7 @@ const AddTouristSpot = () => {
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                fetch('http://localhost:5000/TouristSpot', {
+                fetch('https://travel-with-tanvir-server.vercel.app/TouristSpot', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

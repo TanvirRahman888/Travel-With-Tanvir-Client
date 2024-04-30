@@ -37,12 +37,12 @@ const UpdateTouristSpot = () => {
             title: "Do you update this spot?",
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonText: "Add",
-            denyButtonText: `Don't add`
+            confirmButtonText: "Update",
+            denyButtonText: `Don't Update`
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/TouristSpot/${_id}`, {
+                fetch(`https://travel-with-tanvir-server.vercel.app/TouristSpot/${_id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'
@@ -67,8 +67,8 @@ const UpdateTouristSpot = () => {
 
     }
     return (
-        <div>
-            <h3>UpdateTouristSpot {spotName}</h3>
+        <div className="bg-blue-100 p-5 mb-7 rounded-2xl">
+            <h3 className="text-center text-2xl font-bold m-5">Update {spotName}</h3>
             {/* -------------------- */}
             <form onSubmit={handelUpdateSpot} className="grid grid-cols-2 gap-4">
                     <div >
@@ -130,13 +130,13 @@ const UpdateTouristSpot = () => {
                     <div >
                         <label className="block text-lg text-black font-medium">Author Name</label>
                         <div className="flex">
-                            <input type="text" name="YearlyVisitors" defaultValue={authorName} required placeholder="Author Name" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
+                            <input type="text" name="YearlyVisitors" disabled defaultValue={authorName} required placeholder="Author Name" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
                         </div>
                     </div>
                     <div >
                         <label className="block text-lg text-black font-medium">Author Email</label>
                         <div className="flex">
-                            <input type="text" name="YearlyVisitors" defaultValue={authorEmail} required placeholder="Author Email" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
+                            <input type="text" name="YearlyVisitors" disabled defaultValue={authorEmail} required placeholder="Author Email" className="flex flex-1 border sm:text-sm rounded-md focus:ring-inset" />
                         </div>
                     </div>
                     <button className="text-xl btn col-span-2 btn-success">Update Spot</button>

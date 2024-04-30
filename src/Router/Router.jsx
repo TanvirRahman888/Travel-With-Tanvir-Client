@@ -47,52 +47,52 @@ const Router = createBrowserRouter([
             {
                 path: '/TouristSpot',
                 element: <TouristSpot></TouristSpot>,
-                loader: () => fetch('http://localhost:5000/TouristSpot')
+                loader: () => fetch('https://travel-with-tanvir-server.vercel.app/TouristSpot')
             },
             {
                 path: '/TouristSpot/:id',
                 element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/TouristSpot/${params.id}`)
+                loader: ({ params }) => fetch(`https://travel-with-tanvir-server.vercel.app/TouristSpot/${params.id}`)
             },
             {
                 path: '/MyList/:email',
                 element:<PrivateRoute><MyList></MyList></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/MyList/${params.email}`)
+                loader:({params})=>fetch(`https://travel-with-tanvir-server.vercel.app/MyList/${params.email}`)
             },
             {
                 path: '/TouristSpot/Bangladesh',
                 element:<Country></Country>,
-                loader:()=>fetch(`http://localhost:5000/allSpot/Bangladesh`)
+                loader:()=>fetch(`https://travel-with-tanvir-server.vercel.app/allSpot/Bangladesh`)
             },
             {
                 path: '/TouristSpot/Thailand',
                 element:<CountryThailand></CountryThailand>,
-                loader:()=>fetch(`http://localhost:5000/allSpot/Thailand`)
+                loader:()=>fetch(`https://travel-with-tanvir-server.vercel.app/allSpot/Thailand`)
             },
             {
                 path: '/TouristSpot/Indonesia',
                 element:<CountryIndonesia></CountryIndonesia>,
-                loader:()=>fetch(`http://localhost:5000/allSpot/Indonesia`)
+                loader:()=>fetch(`https://travel-with-tanvir-server.vercel.app/allSpot/Indonesia`)
             },
             {
                 path: '/TouristSpot/Malaysia',
                 element:<CountryMalaysia></CountryMalaysia>,
-                loader:()=>fetch(`http://localhost:5000/allSpot/Malaysia`)
+                loader:()=>fetch(`https://travel-with-tanvir-server.vercel.app/allSpot/Malaysia`)
             },
             {
                 path: '/TouristSpot/Vietnam',
                 element:<CountryVietnam></CountryVietnam>,
-                loader:()=>fetch(`http://localhost:5000/allSpot/Vietnam`)
+                loader:()=>fetch(`https://travel-with-tanvir-server.vercel.app/allSpot/Vietnam`)
             },
             {
                 path: '/TouristSpot/Cambodia',
                 element:<CountryCambodia></CountryCambodia>,
-                loader:()=>fetch(`http://localhost:5000/allSpot/Cambodia`)
+                loader:()=>fetch(`https://travel-with-tanvir-server.vercel.app/allSpot/Cambodia`)
             },
             {
                 path:'/updateSpot/:id',
                 element:<PrivateRoute><UpdateTouristSpot></UpdateTouristSpot></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/TouristSpot/${params.id}`)
+                loader:({params})=>fetch(`https://travel-with-tanvir-server.vercel.app/TouristSpot/${params.id}`)
             }
             
             

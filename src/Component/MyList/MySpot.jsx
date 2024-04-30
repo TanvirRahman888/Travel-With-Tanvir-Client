@@ -15,7 +15,7 @@ const MySpot = ({ spot,myList, setMyList, idx }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                
-                fetch(`http://localhost:5000/TouristSpot/${_id}`, {
+                fetch(`https://travel-with-tanvir-server.vercel.app/TouristSpot/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
