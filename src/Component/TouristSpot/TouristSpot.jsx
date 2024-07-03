@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Spot from "../Spot/Spot";
-import { Zoom } from "react-awesome-reveal";
+
 
 
 const TouristSpot = () => {

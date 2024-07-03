@@ -4,6 +4,10 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  //Dark Mode
+  // purge: [],
+ darkMode: 'class', // Enables dark mode based on the class applied to the HTML tag
+ //Dark Mode
   theme: {
     extend: {},
   },

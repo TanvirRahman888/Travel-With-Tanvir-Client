@@ -36,4 +36,32 @@ c. **React Awesome reveal**: Used for Website animation.
 - **react-multi-carousel**: used for a slider.
 - **SWAL**: used for a Sweet Alert.
 
+## Run this project in your Local Computer
+
+### 📝 Prerequisites
+Before you begin, ensure you have met the following requirements:
+- Node.js and npm installed on your computer.
+- MongoDB installed and running.
+- Git installed on your computer.
+
+### ⚙️ Installation Steps
+
+1. **Clone the repository**
+      git clone https://github.com/TanvirRahman888/Travel-With-Tanvir-Client.git
+
+2. **Navigate to the project directory**
+      cd Travel-With-Tanvir-Client
+3. **Install dependencies**
+      npm install
+4. **Set up environment variables**
+    Create a .env file in the root directory of the project and add the following variables:
+
+    PORT=your_port_number
+    MONGODB_URI=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret_key
+
+5. **Start the server**
+      npm start
+
+
 
